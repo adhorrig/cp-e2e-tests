@@ -9,7 +9,6 @@ module.exports = {
     home.setValue('@email', browser.globals.champion1.login)
     .setValue('@password', browser.globals.champion1.password)
     .submit()
-    .expect.element('@userName').text.to.equal(browser.globals.champion1.fullName);
 
     // open create dojo page
     browser.page.joindojo().openPage();
