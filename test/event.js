@@ -8,6 +8,8 @@ moduke.exports = {
 	'Event page ready': function(browser){
 		var eventPage = browser.page.event();
 
+		/*sessionDescription and ticketType missing a class/id*/
+
 		eventPage.expect.element('@event-name').to.be.present;
 		eventPage.expect.element('@is-public').to.be.present;
 		eventPage.expect.element('@description').to.be.present;
