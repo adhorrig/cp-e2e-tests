@@ -24,7 +24,7 @@
         "waitForConditionTimeout" : 1000,
         "waitForConditionPollInterval": 500
       },
-      "launch_url" : "http://localhost:8000",
+      "launch_url" : "http://localhost:8000/dashboard/dojo",
       "silent": true,
       "output": true,
       "selenium_port": 4444,
