@@ -1,4 +1,4 @@
-moduke.exports = {
+module.exports = {
 	'tags': ['event'],
 
 	before : function)browser){
