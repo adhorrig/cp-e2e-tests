@@ -19,8 +19,6 @@ module.exports = {
 	},
 	commands: [eventCommands],
 	elements:{
-		email: { selector: 'input[name="email"]'},
-		password: { selector: 'input[name="password"]'},
 		fromDate: { selector: 'input[name="fromDate"]'},
 		toDate: { selector: 'input[name="toDate"]'}
 	}
