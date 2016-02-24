@@ -41,16 +41,16 @@ var eventCommands = {
 
 module.exports = {
 	url: function (){
-		return this.api.launchUrl + '/dashboard/dojo/b185ea1a-c2ea-4f8a-8ebf-3f5352a45c08/event-form/22f13c7c-28ca-4be5-9aa7-ea3d9bd12a67';
+		return this.api.launchUrl + '/dashboard/dojo/b185ea1a-c2ea-4f8a-8ebf-3f5352a45c08/event-form/effb9750-9a58-41d1-a10d-99182f1b62e1';
 	},
 	commands: [eventCommands],
 	elements:{
 		eventName: { selector: 'input[name="event-name"]'},
 		description: { selector: 'textarea[name="description"]'},
-		type: { selector: 'input[name="type"]'},
+		type: { selector: 'label[for="recurring"]'},
 		city: { selector: 'label[for="city"]'},
-		address: { selector: 'label[for="address"]'},
-		sessionName: { selector: 'div[class="col-lg-9 session-name-container"]'},
+		address: { selector: 'textarea[name="address"]'},
+		sessionName: { selector: 'input[id="sessionName"]'},
 		sessionDescription: { selector: 'textarea[name="sessionDescription"]'},
 		ticketName: { selector: 'input[id="ticketName"]'},
 		ticketType: { selector: 'div[class="min-width-170"]'},

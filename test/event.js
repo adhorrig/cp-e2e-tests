@@ -43,7 +43,6 @@ module.exports = {
 		.selectCombo('@ticketType', browser, browser.globals.eventInfo.ticketType)
 		.setValue('@ticketQuantity', browser.globals.eventInfo.ticketQuantity)
 		.publishEvent();
-
 	},
 
 	'End Test': function(browser){
