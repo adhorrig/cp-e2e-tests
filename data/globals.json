@@ -42,110 +42,19 @@
     "launchDate": "dojo launch date"
   },
   "eventInfo":{  
-      "dojoId":"b185ea1a-c2ea-4f8a-8ebf-3f5352a45c08",
-      "public":true,
-      "prefillAddress":false,
-      "recurringType":"weekly",
-      "sessions":[  
-         {  
-            "entity$":"-/cd/sessions",
-            "id":"10598603-e5ba-4089-9d58-b9b4fc0bdd3a",
-            "name":"a",
-            "description":"a",
-            "eventId":"22f13c7c-28ca-4be5-9aa7-ea3d9bd12a67",
-            "status":"active",
-            "tickets":[  
-               {  
-                  "entity$":"-/cd/tickets",
-                  "id":"a211aa6e-97aa-4e17-8ab0-57c76dd029e2",
-                  "sessionId":"10598603-e5ba-4089-9d58-b9b4fc0bdd3a",
-                  "name":"a",
-                  "type":"parent-guardian",
-                  "quantity":1,
-                  "deleted":0,
-                  "invites":null,
-                  "totalApplications":0,
-                  "approvedApplications":0,
-                  "$$hashKey":"object:3854"
-               }
-            ],
-            "$$hashKey":"object:3850"
-         }
-      ],
-      "date":"2016-02-28T17:00:00.662Z",
-      "toDate":"2016-03-06T00:00:00.000Z",
-      "startTime":"2016-02-28T17:00:00.662Z",
-      "endTime":"2016-03-06T18:00:00.662Z",
-      "fixedStartDateTime":"2016-02-28T17:00:00.662Z",
-      "fixedEndDateTime":"2016-03-06T18:00:00.662Z",
-      "invites":[  
-
-      ],
-      "type":"recurring",
-      "userTypes":[  
-         {  
-            "title":"Parent/Guardian",
-            "name":"parent-guardian"
-         },
-         {  
-            "title":"Mentor/Volunteer",
-            "name":"mentor"
-         },
-         {  
-            "title":"Youth Over 13",
-            "name":"attendee-o13"
-         },
-         {  
-            "title":"Youth Under 13",
-            "name":"attendee-u13"
-         },
-         {  
-            "title":"Champion",
-            "name":"champion"
-         },
-         {  
-            "title":"Everyone",
-            "name":"all-user-types"
-         }
-      ],
-      "entity$":"-/cd/events",
-      "id":"22f13c7c-28ca-4be5-9aa7-ea3d9bd12a67",
-      "name":"This is an event",
-      "country":{  
-         "countryName":"Ireland",
-         "countryNumber":372,
-         "continent":"EU",
-         "alpha2":"IE",
-         "alpha3":"IRL"
-      },
-      "city":{  
-         "nameWithHierarchy":"Clonee"
-      },
-      "address":"87 The Way\nHunters Run",
-      "createdAt":"2016-02-22T15:25:59.664Z",
-      "createdBy":"e323b618-0572-40bc-9d04-a053c08f548e",
-      "description":"<p>a</p>\n",
-      "position":{  
-         "lat":53.4012244,
-         "lng":-6.418812300000013
-      },
-      "status":"saved",
-      "dates":[  
-         {  
-            "startTime":"2016-02-28T17:00:00.662Z",
-            "endTime":"2016-02-28T18:00:00.662Z"
-         },
-         {  
-            "startTime":"2016-03-06T17:00:00.662Z",
-            "endTime":"2016-03-06T18:00:00.662Z"
-         }
-      ],
-      "ticketApproval":null,
-      "timezone":null,
-      "userType":"",
-      "dojoCity":{  
-         "nameWithHierarchy":"Clonee"
-      },
-      "dojoAddress":"87 The Way\nHunters Run"
-   }
+    "eventName": "unit test",
+    "description": "Example description",
+    "type": "recurring",
+    "recurringType": "weekly",
+    "weekday": "0",
+    "fromDate": "2016-02-28",
+    "endDate": "2016-03-13",
+    "city": "Dublin",
+    "address": "87 The Way",
+    "sessionName": "Example",
+    "sessionDescription": "Example",
+    "ticketName": "Example",
+    "ticketType": "Mentor",
+    "ticketQuantity": "5"
+  }
 }
