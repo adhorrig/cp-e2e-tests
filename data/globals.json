@@ -40,5 +40,21 @@
     "technicalMentors": "dojo technical mentors",
     "venue": "dojo venue",
     "launchDate": "dojo launch date"
+  },
+  "eventInfo":{  
+    "eventName": "unit test",
+    "description": "Example description",
+    "type": "recurring",
+    "recurringType": "weekly",
+    "weekday": "0",
+    "fromDate": "2016-02-28",
+    "toDate": "2016-03-13",
+    "city": "Dublin",
+    "address": "87 The Way",
+    "sessionName": "Example",
+    "sessionDescription": "Example",
+    "ticketName": "Example",
+    "ticketType": "1",
+    "ticketQuantity": "523"
   }
 }
