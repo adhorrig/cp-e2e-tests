@@ -41,13 +41,13 @@ var eventCommands = {
 
 module.exports = {
 	url: function (){
-		return this.api.launchUrl + '/dashboard/dojo/b185ea1a-c2ea-4f8a-8ebf-3f5352a45c08/event-form/effb9750-9a58-41d1-a10d-99182f1b62e1';
+		return this.api.launchUrl + '/dashboard/dojo/b185ea1a-c2ea-4f8a-8ebf-3f5352a45c08/event-form/6271cf08-98cd-41c3-98ee-09b4e351748f';
 	},
 	commands: [eventCommands],
 	elements:{
 		eventName: { selector: 'input[name="event-name"]'},
 		description: { selector: 'textarea[name="description"]'},
-		type: { selector: 'label[for="recurring"]'},
+		prefillAddress: { selector: 'label[for="prefill-address"]'},
 		city: { selector: 'label[for="city"]'},
 		address: { selector: 'textarea[name="address"]'},
 		sessionName: { selector: 'input[id="sessionName"]'},

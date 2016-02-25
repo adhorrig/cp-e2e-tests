@@ -19,7 +19,7 @@ module.exports = {
 
 		eventPage.expect.element('@eventName').to.be.present;
 		eventPage.expect.element('@description').to.be.present;
-		//eventPage.expect.element('@type').to.be.present;
+		//eventPage.expect.element('@prefillAddress').to.be.present;
 		eventPage.expect.element('@city').to.be.present;
 		eventPage.expect.element('@address').to.be.present;
 		eventPage.expect.element('@sessionName').to.be.present;
@@ -34,7 +34,7 @@ module.exports = {
 		var eventPage = browser.page.event();
 		eventPage.setValue('@eventName', browser.globals.eventInfo.eventName)
 		.setValue('@description', browser.globals.eventInfo.description)
-		//.checkboxCheck('@recurring')
+		//.checkboxCheck('@prefillAddress')
 		.setValue('@city', browser.globals.eventInfo.city)
 		.setValue('@address', browser.globals.eventInfo.city)
 		.setValue('@sessionName', browser.globals.eventInfo.sessionName)
