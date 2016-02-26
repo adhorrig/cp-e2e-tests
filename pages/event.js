@@ -1,4 +1,4 @@
-var dojoCommands = {
+var eventCommands = {
   openPage: function () {
     this.navigate()
     .waitForElementVisible('body');
@@ -6,14 +6,14 @@ var dojoCommands = {
   },
 
   submit: function () {
-    this.waitForElementVisible('@submitButton')
+    this.waitForElementPresent('@submitButton')
       .click('@submitButton')
       .api.pause(1000);
     return this;
   },
 
   selectTicket: function (selector, client, ticketType) {
-    this.waitForElementVisible(selector)
+    this.waitForElementPresent(selector)
       .click(selector)
       .api.pause(1000);
     this.api.keys([ticketType]);
@@ -26,8 +26,24 @@ var dojoCommands = {
     return this;
   },
 
+  checkboxCheck: function (checkBoxSelector) {
+    this.waitForElementPresent(checkBoxSelector)
+      .click('@recurringRadio')
+      .api.pause(1000);
+
+    return this;
+  },
+
+  radioCheck: function (radioBoxSelector){
+    this.waitForElementPresent(radioBoxSelector)
+      .click(radioBoxSelector)
+      .api.pause(1000);
+
+    return this;
+  },
+
   setFromDate: function (client, fromDate) {
-    this.waitForElementVisible('@fromDate')
+    this.waitForElementPresent('@fromDate')
       .click('@fromDate')
       .api.pause(1000);
     this.api.keys([client.Keys.ENTER]).pause(1000);
@@ -45,20 +61,15 @@ var dojoCommands = {
 		this.api.execute('angular.element("input[name=toDate]").val("' + toDate + '")');
   },
 
-  checkboxCheck: function (checkBoxSelector) {
-    this.waitForElementVisible(checkBoxSelector)
-      .click(checkBoxSelector)
+  selectCity: function (client, cityName){
+    this.waitForElementPresent('@cityTown')
+      .click('@cityTown')
       .api.pause(1000);
-
+    this.api.keys([cityName]);
+    this.api.pause(1000);
+    this.api.keys([client.Keys.ENTER]);
+    this.api.pause(1000);
     return this;
-  },
-
-  radioCheck: function (radioBoxSelector){
-  	this.waitForElementVisible(radioBoxSelector)
-  		.click(radioBoxSelector)
-  		.api.pause(1000);
-
-		return this;
   }
 };
 
@@ -66,15 +77,15 @@ module.exports = {
   url: function () {
     return this.api.launchUrl + '/dashboard/dojo/b185ea1a-c2ea-4f8a-8ebf-3f5352a45c08/event-form';
   },
-  commands: [dojoCommands],
+  commands: [eventCommands],
   elements: {
     eventName: { selector: 'input[name="event-name"]' },
-    fromDate: { selector: 'input[name="fromDate"]' },
-    recurringRadio: { selector: 'label[for="recurring"]' },
-    toDate: { selector: 'input[name="toDate"]' },
-    description: { selector: 'textarea[name="description"]' },
     prefillAddress: { selector: 'label[for="prefill-address"]' },
-    city: { selector: 'label[for="city"]' },
+    description: { selector: 'textarea[name="description"]' },
+    recurringRadio: { selector: 'input[id="recurringRadio"]' },
+    fromDate: { selector: 'input[name="fromDate"]' },    
+    toDate: { selector: 'input[name="toDate"]' },       
+    cityTown: { selector: 'div[placeholder="Add a city name"]' },
     address: { selector: 'textarea[name="address"]' },
     sessionName: { selector: 'input[id="sessionName"]' },
     sessionDescription: { selector: 'textarea[name="sessionDescription"]' },

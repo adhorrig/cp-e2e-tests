@@ -1,4 +1,3 @@
-
 module.exports = {
   'tags': ['event'],
   before: function (browser) {
@@ -18,12 +17,11 @@ module.exports = {
     var eventPage = browser.page.event();
 
     eventPage.expect.element('@eventName').to.be.present;
-    eventPage.expect.element('@recurringRadio').to.be.present;
-    eventPage.expect.element('@fromDate').to.be.present;
-    //eventPage.expect.element('@toDate').to.be.present;
-    eventPage.expect.element('@description').to.be.present;
     eventPage.expect.element('@prefillAddress').to.be.present;
-    eventPage.expect.element('@city').to.be.present;
+    eventPage.expect.element('@description').to.be.present;
+    eventPage.expect.element('@recurringRadio').to.be.present;
+    eventPage.expect.element('@fromDate').to.be.present;  
+    eventPage.expect.element('@cityTown').to.be.present;
     eventPage.expect.element('@address').to.be.present;
     eventPage.expect.element('@sessionName').to.be.present;
     eventPage.expect.element('@sessionDescription').to.be.present;
@@ -35,23 +33,24 @@ module.exports = {
 
   'Create Event': function (browser) {
     var eventPage = browser.page.event();
-
+    
+    eventPage.expect.element('@recurringRadio').to.be.present;
     eventPage.setValue('@eventName', browser.globals.eventInfo.eventName)
-    .radioCheck('@recurringRadio')
-    .setFromDate(browser, browser.globals.eventInfo.fromDate)
-    .setToDate(browser, browser.globals.eventInfo.toDate)
-    .setValue('@description', browser.globals.eventInfo.description)
-    //.checkboxCheck('@prefillAddress')
-    .setValue('@city', browser.globals.eventInfo.city)
-    .setValue('@address', browser.globals.eventInfo.address)
-    .setValue('@city', browser.globals.eventInfo.city)
-    .setValue('@address', browser.globals.eventInfo.city)
-    .setValue('@sessionName', browser.globals.eventInfo.sessionName)
-    .setValue('@sessionDescription', browser.globals.eventInfo.sessionDescription)
-    .setValue('@ticketName', browser.globals.eventInfo.ticketName)
-    .selectTicket('@ticketType', browser, browser.globals.eventInfo.ticketType)
-    .setValue('@ticketQuantity', browser.globals.eventInfo.ticketQuantity)
-    .submit();
+    eventPage.checkboxCheck('@prefillAddress')
+    eventPage.setValue('@description', browser.globals.eventInfo.description)
+    eventPage.radioCheck('@recurringRadio')
+    eventPage.setFromDate(browser, browser.globals.eventInfo.fromDate)
+    eventPage.setToDate(browser, browser.globals.eventInfo.toDate)
+    //eventPage.selectCity(browser, browser.globals.eventInfo.city)
+    //eventPage.setValue('@address', browser.globals.eventInfo.address)
+    //eventPage.setValue('@cityTown', browser.globals.eventInfo.city)
+    eventPage.setValue('@address', browser.globals.eventInfo.city)
+    eventPage.setValue('@sessionName', browser.globals.eventInfo.sessionName)
+    eventPage.setValue('@sessionDescription', browser.globals.eventInfo.sessionDescription)
+    eventPage.setValue('@ticketName', browser.globals.eventInfo.ticketName)
+    eventPage.selectTicket('@ticketType', browser, browser.globals.eventInfo.ticketType)
+    eventPage.setValue('@ticketQuantity', browser.globals.eventInfo.ticketQuantity)
+    eventPage.submit();
   },
 
   'Check Dates': function (browser){
