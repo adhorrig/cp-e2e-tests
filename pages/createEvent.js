@@ -12,13 +12,23 @@ var eventCommands = {
     return this;
   },
 
+  typeText: function (selector, client){
+    this.waitForElementPresent(selector)
+      .click(selector)
+      .api.pause(1000);
+    this.api.keys([client.keys('A')]);
+    this.api.pause(1000)
+
+    return this
+  },
+
   selectTicket: function (selector, client, ticketType) {
     this.waitForElementPresent(selector)
       .click(selector)
       .api.pause(1000);
     this.api.keys([ticketType]);
     this.api.pause(1000);
-    this.waitForElementVisible('@comboChoicesVisible', 1000);
+    this.waitForElementPresent('@comboChoicesVisible', 1000);
     this.click('@comboChoicesVisible');
     this.api.keys([client.keys.ENTER]);
     this.api.pause(1000);
@@ -34,7 +44,7 @@ var eventCommands = {
     return this;
   },
 
-  radioCheck: function (radioBoxSelector){
+  radioCheck: function (radioBoxSelector){ //Present
     this.waitForElementPresent(radioBoxSelector)
       .click(radioBoxSelector)
       .api.pause(1000);
@@ -54,7 +64,7 @@ var eventCommands = {
   },
 
   setToDate: function (client, toDate){
-  	this.waitForElementVisible('@toDate')
+  	this.waitForElementPresent('@toDate')
   		.click('@toDate')
   		.api.pause(1000);
 		this.api.keys([client.Keys.ENTER]).pause(1000);
@@ -75,12 +85,12 @@ var eventCommands = {
 
 module.exports = {
   url: function () {
-    return this.api.launchUrl + '/dashboard/dojo/b185ea1a-c2ea-4f8a-8ebf-3f5352a45c08/event-form';
+    return this.api.launchUrl + '/dashboard/dojo/c392bcd6-fb3c-4fa2-8f89-d61eed537cd0/event-form';
   },
   commands: [eventCommands],
   elements: {
-    eventName: { selector: 'input[name="event-name"]' },
-    prefillAddress: { selector: 'label[for="prefill-address"]' },
+    eventName: { selector: 'input[id="event-name"]' },
+    prefillAddress: { selector: 'input[name="prefill-address"]' },
     description: { selector: 'textarea[name="description"]' },
     recurringRadio: { selector: 'input[id="recurringRadio"]' },
     fromDate: { selector: 'input[name="fromDate"]' },    

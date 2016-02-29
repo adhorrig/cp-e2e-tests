@@ -6,15 +6,15 @@ module.exports = {
     home.openPage();
 
     home.setValue('@email', 'manager@example.com')
-    .setValue('@password', 'test')
+    .setValue('@password', 'Password1!')
     .submit()
 
     // open create event page
-    browser.page.event().openPage();
+    browser.page.createEvent().openPage();
   },
 
   'Verify Event Form': function (browser) {
-    var eventPage = browser.page.event();
+    var eventPage = browser.page.createEvent();
 
     eventPage.expect.element('@eventName').to.be.present;
     eventPage.expect.element('@prefillAddress').to.be.present;
@@ -32,10 +32,9 @@ module.exports = {
   },
 
   'Create Event': function (browser) {
-    var eventPage = browser.page.event();
+    var eventPage = browser.page.createEvent();
     
-    eventPage.expect.element('@recurringRadio').to.be.present;
-    eventPage.setValue('@eventName', browser.globals.eventInfo.eventName)
+    eventPage.typeText('@eventName', browser)
     eventPage.checkboxCheck('@prefillAddress')
     eventPage.setValue('@description', browser.globals.eventInfo.description)
     eventPage.radioCheck('@recurringRadio')
@@ -54,7 +53,7 @@ module.exports = {
   },
 
   'Check Dates': function (browser){
-    var eventPage = browser.page.event();
+    var eventPage = browser.page.createEvent();
     
     var fromDate = '2016-02-28';
     var toDate = '2016-03-13';
